@@ -15,7 +15,6 @@
      .provider('ngImageGalleryOpts', function ()
      {
        var defOpts = {
-         saveRightClick: true,
          thumbnails: true,
          inline: false,
          bubbles: true,
@@ -48,7 +47,6 @@
              methods: '=?', // {}
              conf: '=?', // {}
 
-             saveRightClick: '=?', // true|false
              thumbnails: '=?', // true|false
              inline: '=?', // true|flase
              bubbles: '=?', // true|flase
@@ -98,7 +96,7 @@
 
              // Images container
              '<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{imgMoveDirection}}">' +
-             '<img class="galleria-image" ng-repeat="image in images track by $index" ng-if="activeImg == image" ng-src="{{image.url}}" ondragstart="return false;" oncontextmenu="return saveRightClick;" ng-attr-title="{{image.title || undefined}}" ng-attr-alt="{{image.alt || undefined}}"/>' +
+             '<img class="galleria-image" ng-repeat="image in images track by $index" ng-if="activeImg == image" ng-src="{{image.url}}" ondragstart="return false;" ng-attr-title="{{image.title || undefined}}" ng-attr-alt="{{image.alt || undefined}}"/>' +
              '</div>' +
 
              // Bubble navigation container
@@ -222,7 +220,6 @@
              // setting options
              scope.$watchCollection('conf', function (conf)
              {
-               scope.saveRightClick = (conf.saveRightClick != undefined) ? conf.saveRightClick : (scope.saveRightClick != undefined) ? scope.saveRightClick : ngImageGalleryOpts.saveRightClick;
                scope.thumbnails = (conf.thumbnails != undefined) ? conf.thumbnails : (scope.thumbnails != undefined) ? scope.thumbnails : ngImageGalleryOpts.thumbnails;
                scope.inline = (conf.inline != undefined) ? conf.inline : (scope.inline != undefined) ? scope.inline : ngImageGalleryOpts.inline;
                scope.bubbles = (conf.bubbles != undefined) ? conf.bubbles : (scope.bubbles != undefined) ? scope.bubbles : ngImageGalleryOpts.bubbles;
