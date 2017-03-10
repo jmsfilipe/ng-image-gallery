@@ -62,7 +62,7 @@
              // Thumbnails container
              //  Hide for inline gallery
              '<div ng-if="thumbnails && !inline" class="ng-image-gallery-thumbnails">' +
-             '<div class="thumb" ng-repeat="image in images track by $index" ng-click="methods.open($index);" ng-style="{ \'background-image\': \'url(\' + (image.thumbUrl || image.url) + \')\' }"  ng-attr-title="{{image.title || undefined}}"></div>' +
+             '<img image-orientation class="thumb" ng-repeat="image in images track by $index" ng-click="methods.open($index);" ng-src="{{image.thumbUrl || image.url}}" ng-attr-title="{{image.title || undefined}} ng-attr-alt="{{image.alt || undefined}}/>' +
              '</div>' +
 
              // Modal container
