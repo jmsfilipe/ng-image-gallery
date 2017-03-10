@@ -96,7 +96,7 @@
 
              // Images container
              '<div class="galleria-images img-anim-{{imgAnim}} img-move-dir-{{imgMoveDirection}}">' +
-             '<img class="galleria-image" ng-repeat="image in images track by $index" ng-if="activeImg == image" ng-src="{{image.url}}" ondragstart="return false;" ng-attr-title="{{image.title || undefined}}" ng-attr-alt="{{image.alt || undefined}}"/>' +
+             '<img image-orientation class="galleria-image" ng-repeat="image in images track by $index" ng-if="activeImg == image" ng-src="{{image.url}}" ondragstart="return false;" ng-attr-title="{{image.title || undefined}}" ng-attr-alt="{{image.alt || undefined}}"/>' +
              '</div>' +
 
              // Bubble navigation container
